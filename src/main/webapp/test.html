@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="newcss.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+	
+</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script>
+	$(document).ready(function() {
+		$("#insertDiv").hide();
+		$("#upsertDiv").hide();
+		$("#insertRadio").click(function() {
+			$("#upsertDiv").hide();
+			$("#insertDiv").show();
+		});
+		$("#upsertRadio").click(function() {
+			$("#insertDiv").hide();
+			$("#upsertDiv").show();
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div class="tabs">
+		<input name="tabs" type="radio" id="tab-1" class="input" /> <label
+			for="tab-1" class="label">History Offload</label> <input name="tabs"
+			type="radio" id="tab-2" class="input" checked="checked" /> <label
+			for="tab-2" class="label">Incremental</label>
+		<div class="panel">
+			<ul class="form-style-2">
+				<div class="wrapper1">
+					<label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Pattern</label>
+					<div>
+						<li><label style="color: activecaption;">Insert:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="insertRadio" name="radio" />
+						</label></li>
+
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Upsert:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="upsertRadio" name="radio" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Partition:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="checkbox" id="partition" name="partition" />
+						</label></li>
+					</div>
+				</div>
+			</ul>
+			<ul class="form-style-2">
+				<div id="insertDiv" class="wrapper2">
+					<br /> <label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Insert
+						Pattern</label>
+					<div>
+						<li><label style="color: activecaption;">Full
+								Refresh:
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="insert" name="insertDivRadio"
+								value="insert" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert:
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="upsert" name="insertDivradio"
+								value="upsert" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert File
+								Layout: &nbsp; &nbsp;&nbsp; <input type="file" id="insert"
+								name="i_insertLayoutFile" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert SQL:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp; <input type="file" id="insertSQL" name="i_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">DDL File:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp; &nbsp;<input type="file" id="insert"
+								name="i_insertDDLFile" />
+						</label></li>
+					</div>
+					<br />
+					<div>
+						<li>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<input
+							type="submit" value="Submit" size="12px" width="42%" />
+						</li>
+					</div>
+				</div>
+			</ul>
+			<ul class="form-style-2">
+				<div id="upsertDiv" class="wrapper2">
+					<br /> <label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Upsert
+						Patten</label>
+
+					<div>
+						<li><label style="color: activecaption;">Insert File
+								Layout: &nbsp; &nbsp;&nbsp; <input type="file" id="insert"
+								name="u_insertLayoutFile" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert SQL:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp; <input type="file" id="insertSQL" name="u_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Update SQL:
+								&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+								<input type="file" id="insertSQL" name="u_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">DDL File:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp; &nbsp;<input type="file" id="insert"
+								name="u_insertDDLFile" />
+						</label></li>
+					</div>
+					<br />
+					<div>
+						<li>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<input
+							type="submit" value="Submit" size="12px" width="42%" />
+						</li>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

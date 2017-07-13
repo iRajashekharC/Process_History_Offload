@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="newcss.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+$("#insertDiv").hide();
+$("#upsertDiv").hide();
+    $("#insertRadio").click(function(){
+    $("#upsertDiv").hide();
+        $("#insertDiv").show();
+    });
+    $("#upsertRadio").click(function(){
+    $("#insertDiv").hide();
+        $("#upsertDiv").show();
+    });
+    
+    
+});
+</script>
+</head>
+<body ng-app>
+	<div class="tabs">
+	<!-- History Tab stars here -->
+		<input name="tabs" type="radio" id="tab-1"
+			class="input" /> <label for="tab-1" class="label"><a href="history.html">History Offload</a></label>
+		<div class="panel">
+		</div>
+		<!-- History Tab ends here -->
+		
+		
+<!-- Incremental Tab starts here -->
+		<input name="tabs" type="radio" id="tab-2" class="input"  checked="checked"/> <label
+			for="tab-2" class="label">Process Offload</label>
+	
+		<div class="panel">
+		<form action="http://localhost:8031/AIMWebservice/rest/convertor/incremental"	method="post" enctype="multipart/form-data" >
+			<ul class="form-style-1">
+				<div class="wrapper1">
+				<br/>
+					<li><table>
+							<tr>
+								<td><label>Database <span class="required">*</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td><div class="select">
+										<span class="arr"></span> <select ng-model="selectedName" name="dbType">
+											<option value="TD">Teradata</option>
+											<option value="ORA">Oracle</option>
+											<option value="MySQL">MySQL</option>
+										</select>
+									</div></td>
+								</label>
+							</tr>
+						</table></li>
+						<br/>
+					<label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Pattern</label>
+					<div>
+						<li><label style="color: activecaption;">Insert:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="insertRadio" name="patternRadio" value="insertRadio"/>
+						</label></li>
+
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Upsert:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="upsertRadio" name="patternRadio" value="upsertRadio"/>
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Partition:
+								&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="checkbox" id="partition" name="partition" value="partition"/>
+						</label></li>
+					</div>
+				</div>
+			</ul>
+			<ul class="form-style-2">
+				<div id="insertDiv" class="wrapper2">
+					<br /> <label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Insert
+						Pattern</label>
+					<div>
+						<li><label style="color: activecaption;">Full
+								Refresh:
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="insert" name="insertPatternRadio"
+								value="fullRefresh" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert:
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" id="upsert" name="insertPatternRadio"
+								value="insertInto" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert File
+								Layout: &nbsp; &nbsp;&nbsp; <input type="file" id="insert"
+								name="i_insertLayoutFile" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert SQL:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp; <input type="file" id="insertSQL" name="i_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">DDL File:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp; &nbsp;<input type="file" id="insert"
+								name="i_insertDDLFile" />
+						</label></li>
+					</div>
+					<br />
+					<div>
+						<li>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<input
+							type="submit" value="Submit" size="12px" width="42%" />
+						</li>
+					</div>
+				</div>
+			</ul>
+			<ul class="form-style-2">
+				<div id="upsertDiv" class="wrapper2">
+					<br /> <label
+						style="color: Orange; font-size: 14px; font-family: Verdana;">Upsert
+						Patten</label>
+
+					<div>
+						<li><label style="color: activecaption;">Insert File
+								Layout: &nbsp; &nbsp;&nbsp; <input type="file" id="insert"
+								name="u_insertLayoutFile" />
+						</label></li>
+					</div>
+
+					<div>
+						<li><label style="color: activecaption;">Insert SQL:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp; <input type="file" id="insertSQL" name="u_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">Update SQL:
+								&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+								<input type="file" id="insertSQL" name="u_insertSQLFile" />
+						</label></li>
+					</div>
+					<div>
+						<li><label style="color: activecaption;">DDL File:
+								&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp; &nbsp;<input type="file" id="insert"
+								name="u_insertDDLFile" />
+						</label></li>
+					</div>
+					<br />
+					<div>
+						<li>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<input
+							type="submit" value="Submit" size="12px" width="42%" />
+						</li>
+					</div>
+				</div>
+			</ul>
+			</form>
+		</div>
+		
+<!-- Incremental Tab ends here -->
+	</div>
+</body>
+</html>

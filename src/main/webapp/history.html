@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Offload Utility</title>
+<link rel="stylesheet" href="newcss.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+	
+</script>
+</head>
+<body ng-app>
+	<div class="tabs">
+	<!-- History Tab stars here -->
+		<input name="tabs" type="radio" id="tab-1" checked="checked"
+			class="input" /> <label for="tab-1" class="label">History Offload</label>
+		<div class="panel">
+			<h1>History Offload HQL</h1>
+			<div id="page">
+		<!-- <div id="nav">
+			<ul>
+				<li><a href="#/home.html">Home</a></li>
+				<li><a href="#/about.html">About</a></li>
+				<li><a href="#/contact.html">Contact</a></li>
+			</ul>
+		</div> -->
+		<div id="content">
+			<p>
+			<form action="http://localhost:8031/AIMWebservice/rest/convertor/history"	method="post" enctype="multipart/form-data" >
+				<ul class="form-style-1">
+					<li><table>
+							<tr>
+								<td><label>Database <span class="required">*</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td><div class="select">
+										<span class="arr"></span> <select ng-model="selectedName" name="dbType">
+											<option value="TD">Teradata</option>
+											<option value="ORA">Oracle</option>
+											<option value="MySQL">MySQL</option>
+										</select>
+									</div></td>
+								</label>
+							</tr>
+						</table></li>
+
+					<!-- <script>
+						var app = angular.module('myApp', []);
+						app.controller('myCtrl', function($scope) {
+							$scope.names = [ "Teradata", "Oracle", "MySQL" ];
+						});
+					</script> -->
+
+					<li><table>
+							<tr>
+								<td><label>Mapping <font color="red">*</font></span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td><div class="form-style-1">
+										<textarea name="field6" class="textarea-field" cols="220"></textarea>
+
+									</div></td>
+								</label>
+							</tr>
+						</table></li>
+
+					<div class="control-group">
+						<h1>Source Location</h1>
+						<label for="first" class="control control--radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE
+							<input id="first" type="radio" name="sourceLoc" ng-model="content"
+							value="file">
+							<div class="control__indicator"></div>
+						</label> <br /> <label for="other" class="control control--radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JDBC
+							Connection <input id="other" type="radio" name="sourceLoc"
+							ng-model="content" value="jdbc">
+							<div class="control__indicator"></div>
+						</label>
+						<div class="">
+							<!-- <h2 ng-show="content == 'file'">This is the FILE content!</h2> -->
+							<!-- <h2 ng-show="content == 'jdbc'">
+								<ul class="form-style-1">
+									<li>
+										<table>
+											<tr>
+												<td><label>Server Name <span class="required">*</span></label></td>
+												<td><input type="email" name="field3"
+													class="field-long" /></td>
+											</tr>
+										</table>
+									</li>
+									<li>
+										<table>
+											<tr>
+												<td><label>Database User Name <span
+														class="required">*</span></label></td>
+												<td><input type="text" name="field3" class="field-long" /></td>
+											</tr>
+										</table>
+									<li>
+										<table>
+											<tr>
+												<td><label>Database Password <span
+														class="required">*</span></label></td>
+												<td><input type="password" name="field3"
+													class="field-long" /></td>
+											</tr>
+										</table>
+							</h2> -->
+						</div>
+					</div>
+
+				</ul>
+			
+			<br />
+			<div>
+
+				
+					<div class="wrapper">
+						<h2 ng-show="content == 'jdbc'">
+							<ul class="form-style-2">
+							<li><label>Server Name <span class="required">*</span></label>
+									<input type="text" name="serverName" class="field-long"
+									placeholder="Server Name" /></li>
+								<li><label>User Name <span class="required">*</span></label>
+									<input type="text" name="dbUserName" class="field-long"
+									placeholder="User Name" /></li>
+								<li><label>Password <span class="required">*</span></label>
+									<input type="password" name="dbPassword" class="field-long"
+									placeholder="Password" /></li>
+								<li>
+								<label>Tables list (with DB name) <font color="red">*</font></span>&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="form-style-2">
+										<textarea name="tablesList" class="textarea-field" cols="220"></textarea>
+									</div>
+								</label>
+							
+								</li>	
+							</ul>
+
+						</h2>
+						<h2 ng-show="content == 'file'">
+<br/><br/>
+							<ul class="form-style-2">
+								<li><label>File to upload<span class="required">*</span></label><input
+									type="file" name="files" class="field-long"  multiple 
+									placeholder="Server Name" /></li>
+							</ul>
+						</h2>
+					</div>
+
+					<div class="form-style-1">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+							type="submit" value="Submit" />
+					</div>
+				</form>
+
+			</div>
+			<br />
+			<br />
+
+		</div>
+	</div>
+		</div>
+		<!-- History Tab ends here -->
+		
+		
+<!-- Incremental Tab starts here -->
+		<input name="tabs" type="radio" id="tab-2" class="input" /> <label
+			for="tab-2" class="label"><a href="incremental.html">Process Offload</a></label>
+	
+<!-- Incremental Tab ends here -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,476 @@
+/*
+* multi-line comment
+*/
+p {
+	line-height: 1em;
+}
+
+h1, h2, h3, h4 {
+	color: orange;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin: 0 0 .5em 0;
+}
+
+h1 {
+	font-size: 1.7em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+/* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
+body {
+	font-family: arial;
+	font-size: 80%;
+	line-height: 1.2em;
+	width: 100%;
+	margin: 0;
+	background: #eee;
+}
+/* you can put your code all in one line like above */
+#page {
+	margin: 20px;
+}
+
+/* or on different lines like below */
+#logo {
+	width: 35%;
+	margin-top: 5px;
+	font-family: georgia;
+	display: inline-block;
+}
+/* but try and be as concise as possible */
+#nav {
+	width: 60%;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+
+#nav ul {
+	
+}
+
+#nav ul li {
+	display: inline-block;
+	height: 62px;
+}
+
+#nav ul li a {
+	padding: 20px;
+	background: orange;
+	color: white;
+}
+
+#nav ul li a:hover {
+	background-color: #ffb424;
+	box-shadow: 0px 1px 1px #666;
+}
+
+#nav ul li a:active {
+	background-color: #ff8f00;
+}
+
+#content {
+	margin: 30px 0;
+	background: white;
+	padding: 20px;
+	clear: both;
+}
+
+#footer {
+	border-bottom: 1px #ccc solid;
+	margin-bottom: 10px;
+}
+
+#footer p {
+	text-align: right;
+	text-transform: uppercase;
+	font-size: 80%;
+	color: grey;
+}
+
+/* multiple styles seperated by a , */
+#content, ul li a {
+	box-shadow: 0px 1px 1px #999;
+}
+
+.select {
+	font-size: 16px;
+	position: relative;
+	display: inline-block;
+}
+
+.select select {
+	outline: none;
+	-webkit-appearance: none;
+	display: block;
+	padding: 0.5em 9em 0.3em 1.5em;
+	margin: 0; #
+	transition: border-color 0.2s;
+	border: 2px solid #9de9f9;
+	border-radius: 5px;
+	background: #fff;
+	color: #ff8000;
+	line-height: normal;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.select .arr {
+	background: #fff;
+	bottom: 5px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 50px;
+	pointer-events: none;
+}
+
+.select .arr:before {
+	/* content: '';
+position: absolute;
+top: 50%;
+right: 24px;
+margin-top: -5px;
+pointer-events: none;
+border-top: 5px solid #738cf0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent; */
+	
+}
+
+.select .arr:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 28px;
+	margin-top: -5px;
+	pointer-events: none;
+	border-top: 6px solid #738cf0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+　
+.form-style-1 {
+	margin: 10px 10px;
+	max-width: 350px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-style-1 li {
+	padding: 100;
+	display: block;
+	list-style: none;
+	margin: 0 0 0 0;
+}
+
+.form-style-1 label {
+	margin: 0 0 3px 0;
+	padding: 0px;
+	display: block;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.form-style-1 input[type=text], .form-style-1 input[type=date],
+	.form-style-1 input[type=datetime], .form-style-1 input[type=number],
+	.form-style-1 input[type=search], .form-style-1 input[type=time],
+	.form-style-1 input[type=url], .form-style-1 input[type=email],
+	textarea, .form-style-1 input[type=text]:focus, .form-style-1 input[type=date]:focus,
+	.form-style-1 input[type=datetime]:focus, .form-style-1 input[type=number]:focus,
+	.form-style-1 input[type=search]:focus, .form-style-1 input[type=time]:focus,
+	.form-style-1 input[type=url]:focus, .form-style-1 input[type=email]:focus,
+	.form-style-1 textarea:focus, .form-style-1 .field-divided {
+	width: 240px;
+}
+
+.form-style-1 .field-long {
+	width: 50%;
+}
+
+.form-style-1 .field-textarea {
+	height: 100px;
+}
+
+.form-style-1 input[type=submit], .form-style-1 input[type=button] {
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover
+	{
+	background: #4691A4;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.form-style-1 .required {
+	color: red;
+}
+
+.form-style-1 textarea {
+	width: 240px;
+	height: 200px;
+}
+
+.form-style-1 textarea {
+	width: 240px;
+	height: 200px;
+	outline: none;
+	-webkit-appearance: none;
+	display: block;
+	padding: 0.5em 9em 0.3em 0.5em;
+	margin: 0; #
+	transition: border-color 0.2s;
+	border: 2px solid #9de9f9;
+	border-radius: 5px;
+	background: #fff;
+	color: #ff8000;
+	line-height: normal;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-weight: 300;
+	margin-top: 0;
+}
+
+.control-group {
+	display: inline-block;
+	vertical-align: top;
+	background: #fff;
+	text-align: left;
+	padding: 10px;
+	width: 200px;
+	height: 50px;
+	margin: 10px;
+}
+
+.control {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background: #e6e6e6;
+}
+
+.control--radio .control__indicator {
+	border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator, .control input:focus ~
+	.control__indicator {
+	background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+	background: #2aa1c0;
+}
+
+.control:hover input:not ([disabled] ):checked ~ .control__indicator,
+	.control input:checked:focus ~ .control__indicator {
+	background: #0e647d;
+}
+
+.control input:disabled ~ .control__indicator {
+	background: #e6e6e6;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.control__indicator:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+
+.control--checkbox .control__indicator:after {
+	left: 8px;
+	top: 4px;
+	width: 3px;
+	height: 8px;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+	border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+	left: 7px;
+	top: 7px;
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.control--radio input:disabled ~ .control__indicator:after {
+	background: #7b7b7b;
+}
+
+　
+.form-style-2 {
+	margin: 10px auto;
+	max-width: 400px;
+	/*padding: 20px 12px 10px 20px;*/
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-style-2 li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+
+.form-style-2 label {
+	margin: 0 0 3px 0;
+	padding: 0px;
+	display: block;
+	font-weight: bold;
+}
+
+.form-style-2 input[type=text], .form-style-2 input[type=date],
+	.form-style-2 input[type=datetime], .form-style-2 input[type=number],
+	.form-style-2 input[type=search], .form-style-2 input[type=time],
+	.form-style-2 input[type=url], .form-style-2 input[type=email],
+	textarea, select {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 1px solid #BEBEBE;
+	padding: 7px;
+	margin: 0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	height: 120%;
+}
+
+.form-style-2 input[type=text]:focus, .form-style-2 input[type=date]:focus,
+	.form-style-2 input[type=datetime]:focus, .form-style-2 input[type=number]:focus,
+	.form-style-2 input[type=search]:focus, .form-style-2 input[type=time]:focus,
+	.form-style-2 input[type=url]:focus, .form-style-2 input[type=email]:focus,
+	.form-style-2 textarea:focus, .form-style-2 select:focus {
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+
+.form-style-2 .field-divided {
+	width: 49%;
+}
+
+.form-style-2 .field-long {
+	width: 50%;
+}
+
+.form-style-2 .field-select {
+	width: 100%;
+}
+
+.form-style-2 .field-textarea {
+	height: 100px;
+}
+
+.form-style-2 input[type=submit], .form-style-2 input[type=button] {
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+
+.form-style-2 input[type=submit]:hover, .form-style-2 input[type=button]:hover
+	{
+	background: #4691A4;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.form-style-2 .required {
+	color: red;
+}
+
+.form-style-2 textarea {
+	width: 240px;
+	height: 100px;
+	outline: none;
+	-webkit-appearance: none;
+	display: block;
+	padding: 0.5em 9em 0.3em 0.5em;
+	margin: 0; #
+	transition: border-color 0.2s;
+	border: 2px solid #9de9f9;
+	border-radius: 5px;
+	background: #fff;
+	color: #ff8000;
+	line-height: normal;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.wrapper {
+	border: 1px dashed #379298;
+	height: 326px;
+	margin-top: 16px;
+	border-radius: 4px;
+	position: relative;
+	font-size: 12px;
+}

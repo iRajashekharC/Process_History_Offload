@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body ng-app>
+	<div id="page">
+		<div id="logo">
+			<h1>
+				<a href="/" id="logoLink">Convertor</a>
+			</h1>
+		</div>
+		<!-- <div id="nav">
+<ul>
+<li><a href="#/home.html">Home</a></li>
+<li><a href="#/about.html">About</a></li>
+<li><a href="#/contact.html">Contact</a></li>
+</ul>
+</div> -->
+		<div id="content">
+			<h2>Home</h2>
+			<p>
+			<form action="http://localhost:8031/AIMWebservice/rest/upload"	method="post" enctype="multipart/form-data">
+				<ul class="form-style-1">
+					<li><table>
+							<tr>
+								<td><label>Database <span class="required">*</span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td><div class="select">
+										<span class="arr"></span> 
+										<select ng-model="selectedName" name="dbType">
+											<option value="TD">Teradata</option>
+											<option value="ORA">Oracle</option>
+											<option value="MySQL">MySQL</option>
+										</select>
+									</div></td>
+								</label>
+							</tr>
+						</table></li>
+
+					<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+$scope.names = [ "Teradata", "Oracle", "MySQL" ];
+});
+</script> -->
+
+					<li><table>
+							<tr>
+								<td><label>Mapping <font color="red">*</font></span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td width="235px"><div class="form-style-2">
+										<textarea name="mappingDtls" class="textarea-field" cols="220"></textarea>
+
+									</div></td>
+								</label>
+							</tr>
+						</table></li>
+
+					<div class="control-group">
+						<h1>Source Location</h1>
+						<label for="first" class="control control--radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE
+							<input id="first" type="radio" name="sourceLoc" ng-model="content"
+							value="file">
+							<div class="control__indicator"></div>
+						</label> <br /> <label for="other" class="control control--radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JDBC
+							Connection <input id="other" type="radio" name="sourceLoc"
+							ng-model="content" value="jdbc">
+							<div class="control__indicator"></div>
+						</label>
+						
+					</div>
+
+				</ul>
+			<br />
+			<div>
+
+					<div class="wrapper">
+						<h2 ng-show="content == 'jdbc'">
+							<ul class="form-style-2">
+								<li><label>Server Name <span class="required">*</span></label>
+									<input type="text" name="serverName" class="field-long"
+									placeholder="Server Name" /></li>
+								<li><label>User Name <span class="required">*</span></label>
+									<input type="text" name="dbUserName" class="field-long"
+									placeholder="User Name" /></li>
+								<li><label>Password <span class="required">*</span></label>
+									<input type="password" name="dbPassword" class="field-long"
+									placeholder="Password" /></li>
+								<li>
+								<label>Tables list (with DB name) <font color="red">*</font></span>&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="form-style-2">
+										<textarea name="tablesList" class="textarea-field" cols="220"></textarea>
+									</div>
+								</label>
+							
+								</li>	
+							</ul>
+
+						</h2>
+						<h2 ng-show="content == 'file'">
+
+							<ul class="form-style-2">
+								<li><label>File to upload<span class="required">*</span></label><input
+									type="file" id="filename" name="files" class="field-long" multiple="multiple"/></li>
+							</ul>
+						</h2>
+					</div>
+<br/><br/><br/>
+					<div class="form-style-1">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+							type="submit" value="Submit" />
+					</div>
+				</form>
+
+			</div>
+			<br /> <br />
+
+		</div>
+
+</body>
+</html>
